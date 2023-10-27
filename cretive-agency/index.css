@@ -1,0 +1,370 @@
+  /*----------- GENERAL --------------*/
+  :root{
+    --primary-color : #f60f29 ;
+  }
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    font-family: sans-serif;
+    color: #111;
+
+}
+  /*----------- BASIC STYLES --------------*/
+h1{
+    font-size: 30px;
+    font-weight: 500;
+    font-family: 'Times New Roman', Times;
+}
+p{
+    padding: 20px 0 10px 0;
+    font-size: 1.1rem;
+}
+.logo{
+    position: absolute;
+    top: 30px;
+    left: 100px;
+    font-size: 2rem;
+    font-weight: 700;
+    z-index: 20;
+}
+    /*----------- BUTTON --------------*/
+.btn{
+    cursor: pointer;
+    display: inline-block;
+    border: #f60f20 solid 1.5px;
+    padding: 10px 50px;
+    margin: 20px 0;
+    background-color: var(--primary-color);
+    color: #fff;
+    text-decoration: none;
+}
+.btn:hover{
+    transform: scale(0.9);
+    border-radius: 5px;
+}
+  /*----------- NAVIGATION  --------------*/
+.navigation{
+position: fixed;
+top: 0;
+left: 100%;
+width: 100%;
+height: 100%;
+z-index: 15;
+background-color: #fff;
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+.navigation.active{
+    left: 0;
+}
+.navigation ul{
+    position: relative;
+}
+.navigation ul li{
+    position: relative;
+    list-style: none;
+    text-align: center;
+    transition: 0.5s;
+}
+.navigation ul li a {
+    text-decoration: none;
+    font-size: 2.2rem;
+    color: #111;
+    font-weight: 300;
+
+}
+.navigation ul li:hover a{
+    color: var(--primary-color);
+}
+.navigation .social-bar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.navigation .social-bar a{
+    display: inline-block;
+    transform: scale(0.5);
+}
+.navigation .email-icon{
+    position: absolute;
+    bottom: 20px;
+    transform: scale(0.5);
+}
+/*------------ TOGGLE ------------*/
+.toggle{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    background: var(--primary-color)  url(/images/menu.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 30px;
+    z-index: 20;
+    cursor: pointer;
+
+
+}
+.toggle.active{
+    background: var(--primary-color)  url(/images/close.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 25px;
+}
+  /*----------- HOME PAGE --------------*/
+.home-img{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 110%;
+}
+section{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    padding: 100px;
+
+}
+.home{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    align-items: center;
+    padding: 100px;
+  
+}
+.home-content{
+    position: relative;
+    z-index: 10;
+    max-width: 600px;
+}
+/* --------------- SERVICE PAGE ---------------- */
+.title{
+    padding-top: 30px;
+}
+.service{
+    margin-top: 40px;
+     display: grid;
+     grid-template-columns: repeat(3,1fr);
+     align-items: center;
+     gap: 30px;
+     align-items: center;
+  }
+.service .services{
+     padding: 30px;
+     align-items: center;
+}
+.service .services h2{
+    margin: 20px 0 10px;
+    font-size: 24px;
+    font-weight: 500;
+}
+.service .services:hover{
+    box-shadow:2px 10px 10px var(--primary-color);
+    cursor: pointer;
+}
+.service .services .icon img{
+    max-width: 100px;
+    align-items: center;
+}
+
+/* --------------- WORK PAGE ---------------- */
+
+.portfolio{
+    display: flex; 
+    flex-wrap: wrap;
+    /* display: grid;
+    grid-template-columns: repeat(3, 1fr); */
+    justify-content: center;
+    align-items: center;
+}
+.portfolio .items{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 5px;
+}
+.portfolio .items img{
+    margin: 5px;
+    width: 100%;
+    height: 100%;
+}
+.portfolio .items .action{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+}
+.portfolio .items .action a{
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px #fff solid;
+    padding: 10px 15px;
+    justify-content: center;
+    align-items: center;
+}
+.portfolio .items:hover .action{
+    opacity: 1;
+}
+
+
+
+
+/* --------------- CONTACT PAGE ---------------- */
+
+
+@media(max-width:700px){
+    .home-img{
+        display: none;
+        }
+        .service{
+            grid-template-columns: subgrid;
+            grid-template-columns: repeat(2,1fr);
+        }
+}
+@media(max-width:375px){
+    .service{
+        grid-template-columns: subgrid;
+        grid-template-columns: repeat(1,1fr);
+        grid-template-rows: repeat(1fr);
+    }
+}
+form{
+position: absolute;
+left: 5%;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.form{
+    background-color: rgb(183, 181, 181);
+    width: 50vw;
+    height: 45vh;
+    padding: 10%;
+}
+.form input{
+    width: 100%;
+}
+.form label{
+    padding: 0;
+    margin: 0;
+    color:  #111;
+    font-size: 20px;
+    font-weight:600 ;
+
+}
+.slide-logo{
+    width: 100%;
+    height: 100%;
+    margin: 0 0 10px 30px;
+    background-color: gray;
+    display: flex;
+    padding:  20px;
+}
+.slide-image img{
+    position: relative;
+    transform: scale(1.0);
+}
+.slide-image img a {
+     color: #fff;
+}
+a{
+    padding-left:20px ;
+    color: #111;
+    text-decoration: none;
+}
+a:hover{
+    color: #f60f20;
+}
+#fix{
+    padding: 0;
+    position: relative;
+    right: 10px;
+}
+#fix2{
+    position: relative;
+    bottom: 10px;
+}
+#fix3{
+    position: relative;
+    right: 20px;
+}
+#fix4{
+    position: relative;
+    left: 20px;
+}
+#hover:hover {
+    transform: scale(0.5);
+}
+
+@media(max-width:700px){
+    form{
+        flex-direction: column;
+        margin: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+    .form{
+        margin-left: 15%;
+    }
+    .slide-logo{
+        margin: 10%;
+    }
+    .push{
+        position: relative;
+        top: 110%;
+    }
+}
+@media(max-width:375px){
+    form{
+        flex-direction: column;
+        margin: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+    .form{
+        margin-left: 15%;
+    }
+    .slide-logo{
+        margin: 10%;
+    }
+    .push{
+        position: relative;
+        top: 110%;
+    }
+}
+footer{
+    position: relative;
+    top: 100%;
+    font-size: 15px;
+    background-color: rgb(183, 181, 181);
+    width: 100vw;
+    padding: 10px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#section2{
+    height: 10%;
+}
